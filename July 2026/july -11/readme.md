@@ -1,1 +1,1 @@
-# Today i have wriiten some kubernatives config files using the minikube
+# Today i have writen some kubernatives config files using the minikube
