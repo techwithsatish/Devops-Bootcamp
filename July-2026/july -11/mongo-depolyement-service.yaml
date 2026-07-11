@@ -43,3 +43,17 @@ spec:
                   name: mongodb-secret
                   key: mongo-root-password
               # value: this are saved in the secret file of k8s using its reference will use here
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: mongodb-service
+spec:
+#selector is used to connect to Pod through label.
+ selector:
+   app: mongodb
+ ports:
+   - protocol: TCP
+     port: 27017
+     targetPort: 27017

@@ -10,7 +10,7 @@ kubectl edit deployement <name>
 kubectl delete deployement <name>
 ```
 
-## status of different k8s component
+## status of different k8s cluster
 
 ```shell
 
@@ -22,11 +22,15 @@ kubectl get pods
 
 kubectl get services
 
+kubectl describe service <service-name>
+
 kubectl get deployments
 
 kubectl get replicasets
 
 kubectl get pod --watch
+
+kubectl get pod -o wide
 
 kubectl describe pod <pod-name>
 
