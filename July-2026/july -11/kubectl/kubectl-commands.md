@@ -14,6 +14,8 @@ kubectl delete deployement <name>
 
 ```shell
 
+kubectl get all
+
 kubectl get nodes
 
 kubectl get pods
@@ -23,6 +25,10 @@ kubectl get services
 kubectl get deployments
 
 kubectl get replicasets
+
+kubectl get pod --watch
+
+kubectl describe pod <pod-name>
 
 ```
 
@@ -48,7 +54,13 @@ kubectl apply -f <file-name>.yaml
 
 # Delete config file
 kubectl delete -f <file-name>.yaml
+```
 
+## Get the secrets
+
+```shell
+# Get all secrets
+kubectl get secrets
 
 
 
