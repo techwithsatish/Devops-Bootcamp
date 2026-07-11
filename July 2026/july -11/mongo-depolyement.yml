@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+
+# blue print for the deployment
+kind: Deployment
+metadata:
+  name: mongodb-deployment
+  labels:
+    app: mongodb
+  spec:
+    replicas: 1 
+    selector:
+      matchLabels:
+        app: mongodb
+
+    # blue print for the pods A => mongoDB
+    template:
+      metadata:
+        labels:
+          app: mongodb
+      spec:
+        containers:
+          - name: mongodb
+            image: mongo
+            ports:
+              - containerPort: 27017
+            env:
+                - name: MONGO_INITDB_ROOT_USERNAME
+                  # value: this are saved in the secret file of k8s using its reference will use here
+                - name: MONGO_INITDB_ROOT_PASSWORD
+                  # value: this are saved in the secret file of k8s using its reference will use here
